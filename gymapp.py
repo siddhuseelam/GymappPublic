@@ -1,9 +1,6 @@
 from flask import Flask, request, redirect,render_template,url_for,session,flash
 import Gymlib
-from flask_bootstrap import Bootstrap
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+
 
 
 
@@ -14,7 +11,7 @@ from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 
-bootstrap = Bootstrap(app)
+
 
 
 data = Gymlib.load_data("gym_data")
