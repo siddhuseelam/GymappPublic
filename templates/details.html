@@ -1,0 +1,163 @@
+{%extends 'base.html'%}
+{%block page_content%}
+
+<div class="page-header">
+    
+    
+    
+    <h1>Details</h1>
+    
+    
+    <h5>Below are the details for</h5>
+    <h2> {{exercise}}</h2>
+   <hr>
+
+   
+
+
+
+</div>
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col">
+        <form action="{{ url_for("save_details") }}" method="post">
+
+            <input type="hidden" name="exercise" value= "{{ exercise }}" > 
+            <input type="hidden" name="weeknum" value= "{{ weeknum }}" > 
+            <input type="hidden" name="muscle_group" value="{{ muscle_group }}" >
+          
+          
+          
+          
+            <h3>current week</h3>
+            <hr>
+
+            
+           
+            <div class="input-group mb3">
+
+                <input class="form-control"  type="number" name="weight" id="" min="0" max="100" placeholder="{{data[weeknum][muscle_group][exercise]["weight"]}}">
+                <div class="input-group-append">
+                    <span class="input-group-text">  Kg</span>
+                </div>
+                
+            </div>
+            <hr>
+
+
+            
+                
+                
+                <div class="input-group mb3">
+
+                    <input class="form-control"  type="number" name="set" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["set"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Sets</span>
+                    </div>
+                    
+                </div>
+
+
+                <hr>
+                
+                
+                <div class="input-group mb3">
+
+                    <input class="form-control"  type="number" name="rep" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["rep"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Reps</span>
+                    </div>
+                    
+                </div>
+
+            <hr>
+
+            <button class="btn btn-lg btn-success">Save</button>
+
+        </form>
+    </div>
+
+
+
+    <div class="col">
+
+        {%if previous_data_existance == 1%}
+
+                <h3>Previous week</h3>
+                <hr>
+                
+                
+                
+                <div class="input-group mb3">
+
+                    <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["weight"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text"> Kg</span>
+                    </div>
+                    
+                </div>
+
+
+                <hr>
+                
+                
+                <div class="input-group mb3">
+
+                    <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["set"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Sets</span>
+                    </div>
+                    
+                </div>
+
+
+                <hr>
+                
+                
+                <div class="input-group mb3">
+
+                    <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["rep"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Reps</span>
+                    </div>
+                    
+                </div>
+        {%else%}
+
+            <h3>No previous data</h3>
+
+        {%endif%}
+                
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col">
+
+        <a href="{{url_for("exercises",weeknum = weeknum,muscle_group =muscle_group)}}">
+        
+            <button class="btn btn-outline-secondary btn-lg">back</button>
+        
+        </a>
+    </div>
+    
+</div>
+
+</div>
+
+{%endblock%}
