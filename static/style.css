@@ -1,0 +1,22 @@
+.bottom_nav{
+
+    background-color: rgba(0, 0, 0, 0.51);
+    backdrop-filter: blur(35px);
+    border-radius: 15px 15px 0 0; height: 76px;
+
+
+}
+
+
+body{
+    padding-bottom: 56px; 
+    padding-top:30px;
+    font-family: Helvetica, 'Courier New', Courier, monospace !important;
+    color: white !important;
+
+
+}
+
+hr{
+    border-color: rgb(58, 58, 58) !important;
+}

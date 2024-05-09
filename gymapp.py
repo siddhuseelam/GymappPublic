@@ -142,4 +142,6 @@ def save_details():
     Gymlib.save_data(data)
 
     return redirect(url_for("details",weeknum = weeknum,muscle_group =muscle_group,exercise = exercise))
-    
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",debug=True)
