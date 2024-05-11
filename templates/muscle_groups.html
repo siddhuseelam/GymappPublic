@@ -1,47 +1,43 @@
 {%extends 'base.html'%}
+{%from 'macros.html' import top_navbar %}
 {%block page_content%}
 
 <div class="page-header">
-    
-    
-    
-    <div class="row">
-        <div class="col">
 
-            <h2>Week {{weeknum}}</h2>
-        </div>
-        <div class="col-3">
     
-            <a href="{{url_for('weeks')}}">
-            
-                <button class="btn btn-danger btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-                      </svg>
-                </button>
-            
-            </a>
-        </div>
+    {{ top_navbar( "Week "+weeknum , url_for('weeks')) }}
+
         
-    </div>
-
-    <br>
     
-    <h5>Below are the list of Muscle groups to choose from:</h5>
-   <hr>
-
-    <form action="{{ url_for('add_muscle_group') }}" method="post">
-            
-        <div class="input-group mb-3">
-                <input type="hidden" name="weeknum" value="{{ weeknum }}" > 
-                <input type="text" name="group" id="" required maxlength="30" minlength="2 " placeholder="  Muscle group Name" >
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-lg btn-outline-success">Add</button>
-                </div>
-
-        </div>
-    </form>
+    
+    <h6>Below are the list of Muscle groups to choose from:</h6>
 <hr>
+
+   
+   
+   
+   <div class="container" style="margin: 5%;">
+
+        <form action="{{ url_for('add_muscle_group') }}" method="post">
+            
+            <div class="row">
+
+                    <input type="hidden" name="weeknum" value="{{ weeknum }}" > 
+                    <input type="text" class="text_form" name="group" id="" required maxlength="30" minlength="2 " placeholder="  Muscle group Name" >
+                    
+                    <div class="input-group-append">
+                        <button type="submit" class=" btn-circular-sm" style="background-color:  rgb(90, 170, 102); margin-left: 10px;">+</button>
+                    </div>
+                
+            </div>
+        </form>
+
+  </div>
+
+
+
+
+  <hr>
 
 
 </div>
