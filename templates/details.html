@@ -21,123 +21,144 @@
 
 </div>
 
-<div class="container">
+<div class="container details_container" >
+<div class="content">
 
-<div class="row">
+    
+    <div class="row">
+        
+        <div class="col">
+            <form action="{{ url_for("save_details") }}" method="post">
+                
+                <input type="hidden" name="exercise" value= "{{ exercise }}" > 
+                <input type="hidden" name="weeknum" value= "{{ weeknum }}" > 
+                <input type="hidden" name="muscle_group" value="{{ muscle_group }}" >
+                
+                
+                
+                
+                <h4>Current <br>week</h4>
+                <hr>
+                
+                <br>
+                <div class="" >
 
-    <div class="col">
-        <form action="{{ url_for("save_details") }}" method="post">
-
-            <input type="hidden" name="exercise" value= "{{ exercise }}" > 
-            <input type="hidden" name="weeknum" value= "{{ weeknum }}" > 
-            <input type="hidden" name="muscle_group" value="{{ muscle_group }}" >
-          
-          
-          
-          
-            <h4>Current <br>week</h4>
-            <hr>
-
-            
-           
-            <div class="input-group mb3">
-
-                <input class="form-control"  type="number" name="weight" id="" min="0" max="100" placeholder="{{data[weeknum][muscle_group][exercise]["weight"]}}">
-                <div class="input-group-append">
-                    <span class="input-group-text">  Kg</span>
+                    <div class="input-group mb3">
+                        
+                        <input class="form-control text_form"  type="number" name="weight" id="" min="0" max="100" placeholder="{{data[weeknum][muscle_group][exercise]["weight"]}}">
+                        <div class="input-group-append">
+                            <span class="input-group-text text_form"> <span class="material-symbols-outlined">
+                                weight
+                            </span>
+                        </span>
+                    </div>
+                    
                 </div>
                 
+                <div style="height: 12px;"></div>
+                
+                
+                
+                
+                
+                <div class="input-group mb3">
+                    
+                    <input class="form-control text_form"  type="number" name="rep" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["rep"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text text_form">
+                            <span class="material-symbols-outlined">
+                                fitness_center
+                            </span>
+                        </span>
+                    </div>
+                    
+                </div>
+                
+                
+                <div style="height: 20px;"></div>
+                
+                
+                <div class="input-group mb3">
+                    
+                    <input class="form-control text_form"  type="number" name="set" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["set"]}}">
+                    <div class="input-group-append">
+                        <span class="input-group-text text_form">
+                            <span class="material-symbols-outlined">
+                                repeat_one
+                            </span>
+                        </span>
+                    </div>
+                    
+                </div>
             </div>
-            <hr>
-
-
+                <br>
+                <hr>
+                
+                <button class="btn-circular" style="background-color: rgb(90, 170, 102);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
+                        <path d="M11 2H9v3h2z"/>
+                        <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
+                    </svg>
+                </button>
+                
+            </form>
+        </div>
+        
+        
+        
+        <div class="col">
             
-                
-                
-                <div class="input-group mb3">
-
-                    <input class="form-control"  type="number" name="set" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["set"]}}">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Sets</span>
-                    </div>
-                    
-                </div>
-
-
-                <hr>
-                
-                
-                <div class="input-group mb3">
-
-                    <input class="form-control"  type="number" name="rep" id="" min="0" max="50" placeholder="{{data[weeknum][muscle_group][exercise]["rep"]}}">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Reps</span>
-                    </div>
-                    
-                </div>
-
-            <hr>
-
-            <button class="btn btn-lg btn-success">Save</button>
-
-        </form>
-    </div>
-
-
-
-    <div class="col">
-
-        {%if previous_data_existance == 1%}
-
-                <!-- <h3>Previous week</h3>
+            {%if previous_data_existance == 1%}
+            
+            <!-- <h3>Previous week</h3>
                 <hr>
                 
                 
                 
                 <div class="input-group mb3">
-
+                    
                     <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["weight"]}}">
                     <div class="input-group-append">
                         <span class="input-group-text"> Kg</span>
                     </div>
                     
                 </div>
-
-
+                
+                
                 <hr>
                 
                 
                 <div class="input-group mb3">
-
+                    
                     <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["set"]}}">
                     <div class="input-group-append">
                         <span class="input-group-text">Sets</span>
                     </div>
                     
                 </div>
-
-
+                
+                
                 <hr>
                 
                 
                 <div class="input-group mb3">
-
+                    
                     <input class="form-control" readonly type="number" name="cur_data" id="" min="0" max="50" placeholder="{{data[previous_weeknum][muscle_group][exercise]["rep"]}}">
                     <div class="input-group-append">
                         <span class="input-group-text">Reps</span>
                     </div>
                     
                 </div> -->
-
-
-                <h4>Previous <br> week</h4>
+                
+                
+                <h4 style="color: rgb(188, 188, 188);">Previous <br> week</h4>
                 <hr>
                 <div class="container details-card">
                     <div class="row">
                         <div class="col-6">
                             Weight
                         </div>
-                       
+                        
                         <div class="col">
                             {{data[previous_weeknum][muscle_group][exercise]["weight"]}}
                         </div>
@@ -151,13 +172,13 @@
                             {{data[previous_weeknum][muscle_group][exercise]["rep"]}}
                         </div>
                     </div>
-                   
-                   
+                    
+                    
                     <hr>
-
-
-
-
+                    
+                    
+                    
+                    
                     <div class="row">
                         <div class="col-6">
                             Set
@@ -166,34 +187,35 @@
                             {{data[previous_weeknum][muscle_group][exercise]["set"]}}
                         </div>
                     </div>
-
+                    
                     
                 </div>
-
-
-
-        {%else%}
-
-            <h3>No previous data</h3>
-
-        {%endif%}
                 
-
+                
+                
+                {%else%}
+                
+                <h3>No previous data</h3>
+                
+                {%endif%}
+                
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+            
+        </div>
+        
+        
+        
     </div>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-{%endblock%}
+    
+    {%endblock%}
