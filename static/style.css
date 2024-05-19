@@ -15,6 +15,7 @@ a{
 body{
 
     padding-top:90px;
+    padding-bottom: 80px;
     font-family: "Passion One"!important;
     font-weight: 400 !important;
     font-style: normal;
@@ -31,10 +32,12 @@ hr{
 
 .top_heading{
     background-color: 74512D;
-    backdrop-filter: blur(15px);
-    padding: 15px;
 
+    padding-left: 15px;
+    padding-top: 12px;
     height: 76px;
+    overflow: hidden;
+
 }
 
 .btn-circular{
@@ -91,6 +94,10 @@ hr{
 
     color:AF8F6F;
     
+
+
+
+
 
 
 }
