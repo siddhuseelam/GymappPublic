@@ -2,20 +2,25 @@
 
     background-color: 74512D !important;
 
-    border-radius: 15px 15px 0 0; height: 76px;
+    border-radius: 15px 15px 0 0; height: 66px;
 
+    color: #AF8F6F !important;
 
 
 }
-
+a{
+    color: #AF8F6F !important;
+}
 
 body{
-    padding-bottom: 600px; 
+
     padding-top:90px;
     font-family: "Passion One"!important;
     font-weight: 400 !important;
     font-style: normal;
     color: rgb(175, 143, 111) !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 
 
 }
@@ -37,7 +42,7 @@ hr{
     height: 60px;
     width: 60px;
     border: 0px white solid;
-    background-color: 74512D;
+    background-color: AF8F6F;
     margin: 5px;
     font-family: "Passion One"!important;
     color: white;
@@ -65,12 +70,14 @@ hr{
 .text_form{
     background-color: rgb(175, 143, 111) !important;
     border-radius: 10px ;
-    border: 1px solid #74512D !important;
+    border: 0px solid #74512D !important;
     color: 543310 !important;
+    padding: 2%;
 }
 
 ::placeholder {
     color: 74512D !important;
+
   }
 
 .details-card{
@@ -79,10 +86,10 @@ hr{
     border-radius: 32px;
     padding: 15% !important;
 
-    box-shadow: 0px 0px 20px -2px rgb(0, 0, 0);
+    background-color: #74512D;
     border: 1px gery solid;
-    backdrop-filter: blur(20px);
-    color: grey;
+
+    color:AF8F6F;
     
 
 
@@ -134,3 +141,19 @@ hr{
     color: F8F4E1 !important;
 }
 
+
+.primaray_color{
+    color: F8F4E1 !important;
+}
+
+.secondary_color{
+    color: AF8F6F !important;
+}
+
+.third_color{
+    color: 74512D !important;
+}
+
+.fourth_color{
+    color: 543310 !important;
+}
