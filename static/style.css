@@ -164,3 +164,8 @@ hr{
 .fourth_color{
     color: 543310 !important;
 }
+
+a:hover{
+    text-decoration: none !important;
+
+}
